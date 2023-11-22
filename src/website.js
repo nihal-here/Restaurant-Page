@@ -78,15 +78,30 @@ function createFooter() {
 
   const copyright = document.createElement("p");
   copyright.classList.add("copyright");
-  copyright.textContent = "© 2023 Burger Junction. All rights reserved.";
+  copyright.textContent = `Copyright © ${new Date().getFullYear()} nihal-here `;
 
+  const gitHubLink = document.createElement("a");
+  gitHubLink.href = "https://github.com/nihal-here";
+
+  const gitHubIcon = document.createElement("i");
+  gitHubIcon.classList.add("fab", "fa-github");
+
+  gitHubLink.appendChild(gitHubIcon);
+  footer.appendChild(gitHubLink);
   footer.appendChild(copyright);
 
   return footer;
 }
 
-export default function loadWebsite() {
+function initializeWebsite() {
+  const content = document.querySelector("#content");
+
+  content.appendChild(createHeader());
+  content.appendChild(createMain());
+  content.appendChild(createFooter());
+
+  setActiveButton(document.querySelector(".button-nav"));
   loadHome();
-  loadMenu();
-  loadContact();
 }
+
+export default initializeWebsite();
