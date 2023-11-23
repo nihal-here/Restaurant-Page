@@ -29,7 +29,7 @@ function createMenu() {
   );
   menu.appendChild(
     createMenuItem(
-      "The Fusion Fusion",
+      "The Fusion",
       " A unique fusion of flavors, featuring a grilled lamb patty infused with Middle Eastern spices, topped with tangy mango chutney, creamy hummus, fresh arugula, and pickled red onions, all served on a warm naan bread."
     )
   );
@@ -54,7 +54,8 @@ function createMenuItem(name, description) {
   foodDescription.textContent = description;
 
   const foodImage = document.createElement("img");
-  foodImage.setAttribute("src", `./images/${name.toLowerCase()}.jpg`);
+  const filename = name.toLowerCase().replace(/\s+/g, "-"); // Replace spaces with hyphens
+  foodImage.setAttribute("src", `./images/${filename}.jpg`);
   foodImage.setAttribute("alt", name);
 
   menuItem.appendChild(foodImage);
@@ -65,7 +66,8 @@ function createMenuItem(name, description) {
 }
 
 function loadMenu() {
-  const main = document.createElement("main");
+  const main = document.querySelector("main");
+  console.log("loading menu");
   main.textContent = "";
   main.appendChild(createMenu());
 }

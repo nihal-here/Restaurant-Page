@@ -4,7 +4,7 @@ function createHome() {
 
   home.appendChild(createParagraph("Good food choices are good investments"));
   const orderNowButton = createButton("Order Now");
-  orderNowButton.classList.add("btn btn-order-now");
+  orderNowButton.classList.add("btn", "btn-order-now");
   home.appendChild(orderNowButton);
 
   home.appendChild(createParagraph("Watch our story"));

@@ -24,7 +24,7 @@ function createNav() {
   homeButton.classList.add("button-nav");
   homeButton.textContent = "Home";
   homeButton.addEventListener("click", (e) => {
-    if (e.classList.contains("active")) return;
+    if (homeButton.classList.contains("active")) return;
     setActiveButton(homeButton);
     loadHome();
   });
@@ -33,7 +33,7 @@ function createNav() {
   menuButton.classList.add("button-nav");
   menuButton.textContent = "Menu";
   menuButton.addEventListener("click", (e) => {
-    if (e.classList.contains("active")) return;
+    if (menuButton.classList.contains("active")) return;
     setActiveButton(menuButton);
     loadMenu();
   });
@@ -42,7 +42,7 @@ function createNav() {
   contactButton.classList.add("button-nav");
   contactButton.textContent = "Contact";
   contactButton.addEventListener("click", (e) => {
-    if (e.classList.contains("active")) return;
+    if (contactButton.classList.contains("active")) return;
     setActiveButton(contactButton);
     loadContact();
   });
@@ -54,14 +54,15 @@ function createNav() {
   return nav;
 }
 
-function setActiveButton() {
-  const buttons = document.querySelectorAll("buttons-nav");
+function setActiveButton(button) {
+  const buttons = document.querySelectorAll(".button-nav");
 
-  buttons.forEach((button) => {
-    if (button !== this) {
-      button.classList.remove("active");
+  buttons.forEach((btn) => {
+    if (btn !== button) {
+      btn.classList.remove("active");
     }
   });
+
   button.classList.add("active");
 }
 
@@ -104,4 +105,4 @@ function initializeWebsite() {
   loadHome();
 }
 
-export default initializeWebsite();
+export default initializeWebsite;
