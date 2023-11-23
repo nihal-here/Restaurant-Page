@@ -87,8 +87,8 @@ function createFooter() {
   const gitHubIcon = document.createElement("i");
   gitHubIcon.classList.add("fab", "fa-github");
 
-  gitHubLink.appendChild(gitHubIcon);
   footer.appendChild(gitHubLink);
+  gitHubLink.appendChild(gitHubIcon);
   footer.appendChild(copyright);
 
   return footer;

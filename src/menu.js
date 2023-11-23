@@ -54,8 +54,7 @@ function createMenuItem(name, description) {
   foodDescription.textContent = description;
 
   const foodImage = document.createElement("img");
-  const filename = name.toLowerCase().replace(/\s+/g, "-"); // Replace spaces with hyphens
-  foodImage.setAttribute("src", `./images/${filename}.jpg`);
+  foodImage.setAttribute("src", `./images/${name}.jpg`);
   foodImage.setAttribute("alt", name);
 
   menuItem.appendChild(foodImage);

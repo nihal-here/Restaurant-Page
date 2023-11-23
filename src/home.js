@@ -2,7 +2,11 @@ function createHome() {
   const home = document.createElement("div");
   home.classList.add("home");
 
-  home.appendChild(createParagraph("Good food choices are good investments"));
+  home.appendChild(
+    createParagraph(
+      "Your Culinary Adventure Begins Here: Dive into our Irresistible Burgers!"
+    )
+  );
   const orderNowButton = createButton("Order Now");
   orderNowButton.classList.add("btn", "btn-order-now");
   home.appendChild(orderNowButton);
