@@ -1,3 +1,4 @@
+import loadMenu from "./menu";
 function createHome() {
   const home = document.createElement("div");
   home.classList.add("home");
@@ -9,6 +10,9 @@ function createHome() {
   );
   const orderNowButton = createButton("Order Now");
   orderNowButton.classList.add("btn", "btn-order-now");
+  orderNowButton.addEventListener("click", () => {
+    loadMenu();
+  });
   home.appendChild(orderNowButton);
 
   home.appendChild(createParagraph("Watch our story"));
